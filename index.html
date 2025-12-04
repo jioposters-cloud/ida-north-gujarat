@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDA North Gujarat | Events & Registration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { background: white; border-radius: 15px; padding: 30px 20px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .logo { font-size: 2.5em; font-weight: bold; color: #2a5298; margin-bottom: 10px; }
+        .tagline { color: #666; font-size: 1.1em; margin-bottom: 5px; }
+        .developer { color: #999; font-size: 0.9em; margin-top: 10px; font-style: italic; }
+        .button-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .action-btn { background: white; border: none; padding: 25px; border-radius: 12px; font-size: 1.1em; font-weight: 600; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; color: #2a5298; }
+        .action-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.25); background: #2a5298; color: white; }
+        .content-section { display: none; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: slideIn 0.3s ease; }
+        .content-section.active { display: block; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .section-title { font-size: 1.8em; color: #2a5298; margin-bottom: 20px; text-align: center; }
+        .bank-card { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+        .bank-field { margin-bottom: 20px; }
+        .bank-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .bank-value { font-size: 1.2em; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .copy-btn { background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85em; transition: all 0.3s ease; }
+        .copy-btn:hover { background: white; color: #2a5298; }
+        .search-filter { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+        .search-filter input, .search-filter select { padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; flex: 1; min-width: 200px; }
+        .search-filter input:focus, .search-filter select:focus { outline: none; border-color: #2a5298; }
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: #2a5298; color: white; padding: 15px; text-align: left; font-weight: 600; }
+        td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f5f5f5; }
+        .badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
+        .badge.yes { background: #d4edda; color: #155724; }
+        .badge.no { background: #f8d7da; color: #721c24; }
+        .social-link { display: inline-block; padding: 15px 30px; background: #2a5298; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; }
+        .social-link:hover { background: #1e3c72; transform: translateY(-3px); }
+        .social-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .no-data { text-align: center; padding: 40px; color: #999; }
+        footer { text-align: center; color: white; margin-top: 40px; padding: 20px; font-size: 0.9em; }
+        @media (max-width: 768px) { .logo { font-size: 1.8em; } .button-grid { grid-template-columns: 1fr; } .search-filter { flex-direction: column; } .search-filter input, .search-filter select { min-width: auto; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🦷 IDA NORTH GUJARAT</div>
+            <div class="tagline">Indian Dental Association - North Gujarat Branch</div>
+            <div class="developer">Developer: Dr. Ankit M. Patel, Deesa</div>
+        </header>
+        <div class="button-grid">
+            <button class="action-btn" onclick="showSection('register')">📝 Register for Events</button>
+            <button class="action-btn" onclick="showSection('directory')">👥 View Members</button>
+            <button class="action-btn" onclick="showSection('bank')">🏦 Bank Details</button>
+            <button class="action-btn" onclick="showSection('facebook')">👍 Follow us on Facebook</button>
+        </div>
+        <div id="register" class="content-section">
+            <h2 class="section-title">📝 Register for Events & CDE Meetings</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666;">Click the button below to register for upcoming events and continuing dental education meetings.</p>
+            <div style="text-align: center;"><a href="https://forms.gle/ewtQwdrjRMeNB8yQ6" target="_blank" class="social-link">📋 Click Here to Register →</a></div>
+        </div>
+        <div id="directory" class="content-section">
+            <h2 class="section-title">👥 Registered Members Directory</h2>
+            <div class="search-filter">
+                <input type="text" id="searchName" placeholder="Search by Doctor Name..." onkeyup="filterTable()">
+                <input type="text" id="searchCity" placeholder="Search by City..." onkeyup="filterTable()">
+                <select id="filterHandson" onchange="filterTable()">
+                    <option value="">All Members</option>
+                    <option value="Yes">Hands-on Participants</option>
+                    <option value="No">Non-Hands-on</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="membersTable">
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>City</th>
+                            <th>Contact</th>
+                            <th>Hands-on</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"><tr><td colspan="5" class="no-data">Loading data from Google Sheets...</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="bank" class="content-section">
+            <h2 class="section-title">🏦 Bank Account Details</h2>
+            <div class="bank-card">
+                <div class="bank-field">
+                    <div class="bank-label">Account Holder Name</div>
+                    <div class="bank-value">Indian Dental Association NORTH GUJARAT BRANCH</div>
+                </div>
+                <div class="bank-field">
+                    <div class="bank-label">Account Number</div>
+                    <div class="bank-value">73190100000020 <button class="copy-btn" onclick="copyToClipboard('73190100000020')">📋 Copy</button></div>
+                </div>
+                <div class="bank-field">
+                    <div class="bank-label">Bank & Branch</div>
+                    <div class="bank-value">BANK OF BARODA, DEESA</div>
+                </div>
+                <div class="bank-field">
+                    <div class="bank-label">IFSC Code</div>
+                    <div class="bank-value">BARB0DBDESA <button class="copy-btn" onclick="copyToClipboard('BARB0DBDESA')">📋 Copy</button></div>
+                </div>
+            </div>
+            <p style="color: #999; font-size: 0.9em; margin-top: 20px; text-align: center;">⚠️ Note: Fifth character in IFSC code is ZERO (0), not letter O</p>
+        </div>
+        <div id="facebook" class="content-section">
+            <h2 class="section-title">👍 Connect With Us on Facebook</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666;">Follow us on Facebook for latest updates, announcements, and dental tips!</p>
+            <div class="social-links"><a href="https://www.facebook.com/ida" target="_blank" class="social-link">📱 Visit our Facebook Page →</a></div>
+        </div>
+        <footer><p>&copy; 2025 IDA North Gujarat | Dr. Ankit M. Patel, Deesa | Secure & Responsive</p></footer>
+    </div>
+    <script>
+        const membersData = [
+            { name: "Dr. Rajesh Patel", city: "Deesa", contact: "9876543210", handson: "Yes", details: "Prosthodontics" },
+            { name: "Dr. Priya Shah", city: "Himmatnagar", contact: "9876543211", handson: "Yes", details: "Orthodontics" },
+            { name: "Dr. Ankit M. Patel", city: "Deesa", contact: "9876543212", handson: "No", details: "Implantology" },
+            { name: "Dr. Kavita Verma", city: "Khedbrahma", contact: "9876543213", handson: "Yes", details: "Endodontics" },
+            { name: "Dr. Vikram Singh", city: "Idar", contact: "9876543214", handson: "No", details: "Periodontology" }
+        ];
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            if (sectionId === 'directory') loadDirectoryData();
+        }
+        function loadDirectoryData() {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            membersData.forEach(member => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${member.name}</td><td>${member.city}</td><td>${member.contact}</td><td><span class="badge ${member.handson === 'Yes' ? 'yes' : 'no'}">${member.handson}</span></td><td>${member.details}</td>`;
+                tableBody.appendChild(row);
+            });
+        }
+        function filterTable() {
+            const nameFilter = document.getElementById('searchName').value.toLowerCase();
+            const cityFilter = document.getElementById('searchCity').value.toLowerCase();
+            const handsonFilter = document.getElementById('filterHandson').value;
+            const rows = document.querySelectorAll('#membersTable tbody tr');
+            rows.forEach(row => {
+                const name = row.cells[0].textContent.toLowerCase();
+                const city = row.cells[1].textContent.toLowerCase();
+                const handson = row.cells[3].textContent.trim();
+                const matchName = name.includes(nameFilter);
+                const matchCity = city.includes(cityFilter);
+                const matchHandson = handsonFilter === '' || handson.includes(handsonFilter);
+                row.style.display = (matchName && matchCity && matchHandson) ? '' : 'none';
+            });
+        }
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✓ Copied to clipboard: ' + text);
+            }).catch(err => {
+                console.error('Error copying text:', err);
+            });
+        }
+        window.addEventListener('load', () => {
+            showSection('register');
+        });
+    </script>
+</body>
+</html>
