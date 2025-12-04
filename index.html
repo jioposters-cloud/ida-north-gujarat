@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+131
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -128,8 +128,7 @@
             tableBody.innerHTML = '';
             membersData.forEach(member => {
                 const row = document.createElement('tr');
-                row.innerHTML = `<td>${member.name}</td><td>${member.city}</td><td>${member.contact}</td><td><span class="badge ${member.handson === 'Yes' ? 'yes' : 'no'}">${member.handson}</span></td><td>${member.details}</td>`;
-                tableBody.appendChild(row);
+row.innerHTML = '<td>${member.name}</td><td>${member.city}</td>';                tableBody.appendChild(row);
             });
         }
         function filterTable() {
@@ -142,9 +141,7 @@
                 const handson = row.cells[3].textContent.trim();
                 const matchName = name.includes(nameFilter);
                 const matchCity = city.includes(cityFilter);
-                const matchHandson = handsonFilter === '' || handson.includes(handsonFilter);
-                row.style.display = (matchName && matchCity && matchHandson) ? '' : 'none';
-            });
+row.style.display = (matchName && matchCity) ? '' : 'none';            });
         }
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
