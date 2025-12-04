@@ -128,8 +128,7 @@
             tableBody.innerHTML = '';
             membersData.forEach(member => {
                 const row = document.createElement('tr');
-row.innerHTML = '<td>${member.name}</td><td>${member.city}</td>';                tableBody.appendChild(row);
-            });
+row.innerHTML = `<td>${member.name}</td><td>${member.city}</td>`;            });
         }
         function filterTable() {
             const nameFilter = document.getElementById('searchName').value.toLowerCase();
