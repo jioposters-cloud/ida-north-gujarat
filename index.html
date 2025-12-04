@@ -135,8 +135,7 @@
         function filterTable() {
             const nameFilter = document.getElementById('searchName').value.toLowerCase();
             const cityFilter = document.getElementById('searchCity').value.toLowerCase();
-            const handsonFilter = document.getElementById('filterHandson').value;
-            const rows = document.querySelectorAll('#membersTable tbody tr');
+                        const rows = document.querySelectorAll('#membersTable tbody tr');
             rows.forEach(row => {
                 const name = row.cells[0].textContent.toLowerCase();
                 const city = row.cells[1].textContent.toLowerCase();
