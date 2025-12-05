@@ -163,9 +163,8 @@
                     for (let i = 1; i < lines.length; i++) {
                         if (lines[i].trim()) {
                             const cols = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g, ''));
-                            if (cols.length >= 2 && cols[0]) {
-                                const row = document.createElement('tr');
-                                row.innerHTML = `<td>${cols[0]}</td><td>${cols[1] || ''}</td>`;
+                if (cols.length >= 3 && cols[1]) {                                const row = document.createElement('tr');
+                row.innerHTML = `<td>${cols[1]}</td><td>${cols[2] || ''}</td>`;
                                 tableBody.appendChild(row);
                                 hasData = true;
                             }
