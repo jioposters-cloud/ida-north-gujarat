@@ -43,10 +43,14 @@
         footer { text-align: center; color: white; margin-top: 40px; padding: 20px; font-size: 0.9em; }
         @media (max-width: 768px) { .logo { font-size: 1.8em; } .button-grid { grid-template-columns: 1fr; } .search-filter { flex-direction: column; } .search-filter input, .search-filter select { min-width: auto; } }
     </style>
+     .mobile-dropdown { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+ .dropdown-link { display: block; padding: 12px; text-decoration: none; color: #2a5298; font-weight: 600; text-align: center; border-radius: 6px; transition: all 0.3s ease; }
+ .dropdown-link:hover { background: #f0f0f0; transform: translateY(-2px); }
 </head>
 <body>
     <div class="container">
         <header>
+             #mobileToggleBtn { display: block !important; }
             <div class="logo">🦷 IDA NORTH GUJARAT</div>
             <div class="tagline">Indian Dental Association - North Gujarat Branch</div>
         </header>
@@ -56,7 +60,11 @@
             <button class="action-btn" onclick="showSection('bank')">🏦 Bank Details</button>
             <button class="action-btn" onclick="showSection('facebook')">👍 Follow us on Facebook</button>
         </div>
+         <div id="mobileDropdown" class="mobile-dropdown" style="display: none; margin-top: 10px;">
+ <a href="https://forms.gle/ewtQwdrjRMeNB8yQ6" class="dropdown-link">📍 Register for Events</a>
+ </div>
         <div id="register" class="content-section">
+             <button class="action-btn" style="display: none;" id="mobileToggleBtn" onclick="toggleMobileDropdown()">📋 Event Registration Options</button>
             <h2 class="section-title">📝 Register for Events & CDE Meetings</h2>
             <p style="text-align: center; margin-bottom: 20px; color: #666;">Click the button below to register for upcoming events and continuing dental education meetings.</p>
             <div style="text-align: center;"><a href="https://forms.gle/ewtQwdrjRMeNB8yQ6" class="social-link">📋 Click Here to Register →</a></div>
@@ -121,12 +129,7 @@
             document.getElementById(sectionId).classList.add('active');
             if (sectionId === 'directory') loadDirectoryData();
         }
-        function loadDirectoryData() {
-            const tableBody = document.getElementById('tableBody');
-            tableBody.innerHTML = '';
-            membersData.forEach(member => {
-                const row = document.createElement('tr');
-row.innerHTML = `<td>${member.name}</td><td>${member.city}</td>`;            });
+function loadDirectoryData() { const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQazkxgu7I5RdwbWW9m1pUzvOiHVWjEypsSqsB4Vt14-dDVcbqMt-rN34iI7zIYd1slDU3ImihcxaaR/pub?gid=1585082830&single=true&output=csv'; fetch(csvUrl).then(response => response.text()).then(csvText => { const lines = csvText.split('\n'); const tableBody = document.getElementById('tableBody'); tableBody.innerHTML = ''; let hasData = false; for (let i = 1; i < lines.length; i++) { if (lines[i].trim()) { const cols = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g, '')); if (cols.length > 0 && cols[0]) { const row = document.createElement('tr'); row.innerHTML = `<td>${cols[0]}</td><td>${cols[1] || ''}</td>`; tableBody.appendChild(row); hasData = true; } } } if (!hasData) { tableBody.innerHTML = '<tr><td colspan="2" class="no-data">No members registered yet</td></tr>'; } }).catch(err => { console.error('Error loading data:', err); document.getElementById('tableBody').innerHTML = '<tr><td colspan="2" class="no-data">Error loading data. Please try again.</td></tr>'; }); }
         }
         function filterTable() {
             const nameFilter = document.getElementById('searchName').value.toLowerCase();
@@ -147,6 +150,7 @@ row.style.display = (matchName && matchCity) ? '' : 'none';            });
                 console.error('Error copying text:', err);
             });
         }
+         function toggleMobileDropdown() { const dropdown = document.getElementById('mobileDropdown'); if (dropdown.style.display === 'none') { dropdown.style.display = 'block'; } else { dropdown.style.display = 'none'; } }
         window.addEventListener('load', () => {
             showSection('register');
         });
