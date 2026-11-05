@@ -1440,8 +1440,6 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="#events" class="nav-link">CDE Events</a></li>
           <li><a href="#members" class="nav-link">Member Directory</a></li>
-          <li><a href="#familyTour" class="nav-link">Family Tour</a></li>
-          <li><a href="#responseView" class="nav-link">Response View</a></li>
           <li><a href="#bank" class="nav-link">Bank Info</a></li>
           <li><a href="#connect" class="nav-link">Connect</a></li>
           <li><a href="https://forms.gle/ewtQwdrjRMeNB8yQ6" target="_blank" class="btn-nav-cta">Register Now</a></li>
@@ -1709,137 +1707,6 @@
     </div>
   </section>
 
-<!-- ==========================================
-        FAMILY TOUR MEETING SECTION
-        ========================================== -->
-  <section class="section-padding" id="familyTour" style="background: white;">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-subtitle">Upcoming Event</span>
-        <h2 class="section-title">👨‍👩‍👧‍👦 Family Tour Meeting - Udaipur</h2>
-      </div>
-      
-      <div class="cde-card">
-        <div class="cde-visual">
-          <div class="cde-badge-live">
-            <span></span>
-            Limited Seats Available
-          </div>
-          <h3>🌟 IDA North Gujarat Tour</h3>
-          <p>5-star luxury stay at The Lotus County Resort, Udaipur. Early bird discount for the first 50 registrations.</p>
-        </div>
-        
-        <div class="cde-details">
-          <h4>Tour Details</h4>
-          
-          <ul class="cde-list">
-            <li class="cde-item">
-              <div class="cde-item-icon">🏨</div>
-              <div class="cde-item-text">
-                <p>Accommodation</p>
-                <p>The Lotus County Resort, Udaipur (5-Star Property)</p>
-              </div>
-            </li>
-            <li class="cde-item">
-              <div class="cde-item-icon">💰</div>
-              <div class="cde-item-text">
-                <p>Registration Pricing</p>
-                <p>IDA NG Member + Family: ₹3,000 discount | Individual IDA Member: ₹1,500 discount</p>
-              </div>
-            </li>
-            <li class="cde-item">
-              <div class="cde-item-icon">🛏️</div>
-              <div class="cde-item-text">
-                <p>Room & Extra Bed</p>
-                <p>Room: ₹5,000 per room | Extra Bed: ₹2,500</p>
-              </div>
-            </li>
-            <li class="cde-item">
-              <div class="cde-item-icon">📅</div>
-              <div class="cde-item-text">
-                <p>Confirmation Deadline</p>
-                <p>1 September 2026 - Payment and confirmation required</p>
-              </div>
-            </li>
-          </ul>
-          
-          <div class="cde-ctas">
-            <a href="https://docs.google.com/forms/d/1IYZSrd5S7fagqnW4fcx9ATAqkC5Rb8V5phEfXCsPvLM/edit" class="btn-register-cde" target="_blank">
-              Register Now
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-        RESPONSE VIEW SECTION
-        ========================================== -->
-  <section class="section-padding" id="responseView" style="background: var(--bg-soft-slate);">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="section-subtitle">Registration Status</span>
-        <h2 class="section-title">📊 Who Is Coming to Udaipur?</h2>
-      </div>
-      
-      <div class="directory-box">
-        <div class="directory-filters">
-          <div class="filter-group search-group">
-            <span class="filter-icon">🔍</span>
-            <input type="text" id="responseSearchName" class="filter-input" placeholder="Search by Doctor Name..." onkeyup="filterResponses()">
-          </div>
-          <div class="filter-group">
-            <span class="filter-icon">📍</span>
-            <select id="responseSelectCity" class="filter-input filter-select" onchange="filterResponses()">
-              <option value="">All Cities</option>
-            </select>
-          </div>
-        </div>
-        
-        <div id="responseLoader" class="loader-box" style="display: none;">
-          <div class="skeleton-row"><div class="skeleton-cell c-1"></div><div class="skeleton-cell c-2"></div></div>
-          <div class="skeleton-row"><div class="skeleton-cell c-1"></div><div class="skeleton-cell c-2"></div></div>
-          <div class="skeleton-row"><div class="skeleton-cell c-1"></div><div class="skeleton-cell c-2"></div></div>
-        </div>
-        
-        <div id="responseError" class="error-container" style="display: none;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <div>
-            <div class="error-title">Database Sync Error</div>
-            <div class="error-desc" id="responseErrorMsgText">Unable to load responses. Please try reloading the page.</div>
-          </div>
-        </div>
-        
-        <div id="responseEmptyState" class="no-data-box" style="display: none;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          <div class="no-data-title">No Registrations Found</div>
-          <div class="no-data-desc">No responses received yet. Check back later for updates.</div>
-        </div>
-        
-        <div class="table-container" id="responseTableContainer" style="display: none;">
-          <table id="responseTable">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Doctor Name</th>
-                <th>City</th>
-                <th>Mobile</th>
-                <th>Registration Category</th>
-                <th>Family Count</th>
-                <th>Extra Bed</th>
-              </tr>
-            </thead>
-            <tbody id="responseTableBody">
-              <!-- Content loaded via AJAX -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ==========================================
         FACEBOOK & CONNECT
         ========================================== -->
@@ -1876,8 +1743,6 @@
           <ul class="footer-links">
             <li><a href="#">Home</a></li>
             <li><a href="#events">CDE Events</a></li>
-            <li><a href="#familyTour">Family Tour</a></li>
-            <li><a href="#responseView">Response View</a></li>
             <li><a href="#members">Member Directory</a></li>
             <li><a href="#bank">Bank Details</a></li>
           </ul>
@@ -1939,12 +1804,7 @@
     const SHEET_GID = '1585082830';
     const csvUrl = `https://docs.google.com/spreadsheets/d/e/${SPREADSHEET_ID}/pub?gid=${SHEET_GID}&single=true&output=csv`;
 
-    const TOUR_SPREADSHEET_ID = '1x5u64fz3gVgPt_Huw1fAYn0rZHTySG4TBXTu9uZWCvs';
-    const TOUR_SHEET_GID = '1595893853';
-    const tourCsvUrl = `https://docs.google.com/spreadsheets/d/${TOUR_SPREADSHEET_ID}/export?gid=${TOUR_SHEET_GID}&format=csv`;
-
     let membersData = [];
-    let tourResponses = [];
 
     // Robust CSV Line Parser
     function parseCSVLine(line) {
@@ -2125,191 +1985,9 @@
       }, 2000);
     }
 
-    // Load Tour Responses from Google Sheets CSV
-    function loadTourResponses() {
-      const loader = document.getElementById('responseLoader');
-      const errorDiv = document.getElementById('responseError');
-      const errorMsgText = document.getElementById('responseErrorMsgText');
-      const tableBody = document.getElementById('responseTableBody');
-      const tableContainer = document.getElementById('responseTableContainer');
-      const selectCity = document.getElementById('responseSelectCity');
-
-      // Only show loader if not already loaded
-      if (!tourResponses.length) {
-        loader.style.display = 'block';
-      }
-      errorDiv.style.display = 'none';
-      tableContainer.style.display = 'none';
-
-      fetch(tourCsvUrl + '&t=' + Date.now())
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Failed to load tour responses. HTTP Status: ${response.status}`);
-          }
-          return response.text();
-        })
-        .then(csvText => {
-          if (!csvText || csvText.trim().length === 0) {
-            throw new Error('Tour spreadsheet returned empty content.');
-          }
-
-          const lines = csvText.split('\n');
-          tourResponses = [];
-          const citiesSet = new Set();
-
-          // Skip headers
-          for (let i = 1; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (line) {
-              const cols = parseCSVLine(line);
-              const cleanCols = cols.map(c => c.replace(/^\"|\"$/g, '').trim());
-              
-              // Column indexes based on the CSV structure:
-              // cols[1] -> Timestamp, cols[2] -> IDA NG Member Name, 
-              // cols[3] -> City, cols[4] -> Empty, cols[5] -> Full Name,
-              // cols[6] -> City (duplicate), cols[7] -> Mobile Number,
-              // cols[8] -> Registration Category, cols[9] -> Family Count
-              if (cleanCols.length >= 8 && cleanCols[2]) {
-                const docName = cleanCols[2]; // IDA NG Member Name
-                const docCity = cleanCols[3] || cleanCols[6]; // City from available columns
-                const mobile = cleanCols[7] || '';
-                const category = cleanCols[8] || '';
-                const familyCount = cleanCols[9] || '1';
-                
-                // Check if it's a valid response (not empty)
-                if (docName && docName !== 'IDA NG Member Name' && docName !== 'Dr. Suresh Choyal') {
-                  tourResponses.push({
-                    name: docName,
-                    city: docCity,
-                    mobile: mobile,
-                    category: category,
-                    familyCount: familyCount,
-                    extraBed: mobile.includes('Lecture with Hands-on') || mobile.includes('Hands-on')
-                  });
-
-                  if (docCity) {
-                    citiesSet.add(docCity);
-                  }
-                }
-              }
-            }
-          }
-
-          // Populate Cities Dropdown
-          const sortedCities = Array.from(citiesSet).sort();
-          selectCity.innerHTML = '<option value="">All Cities</option>';
-          sortedCities.forEach(city => {
-            const opt = document.createElement('option');
-            opt.value = city;
-            opt.textContent = city;
-            selectCity.appendChild(opt);
-          });
-
-          // Render Table
-          renderTourResponses(tourResponses);
-        })
-        .catch(err => {
-          console.error(err);
-          if (!tourResponses.length) {
-            loader.style.display = 'none';
-            errorDiv.style.display = 'flex';
-            errorMsgText.textContent = `⚠️ Error loading responses: ${err.message}. Please refresh the page or check your connection.`;
-          }
-        });
-    }
-
-    // Render Tour Responses Row Elements
-    function renderTourResponses(data) {
-      const tableBody = document.getElementById('responseTableBody');
-      const loader = document.getElementById('responseLoader');
-      const tableContainer = document.getElementById('responseTableContainer');
-      const emptyState = document.getElementById('responseEmptyState');
-
-      tableBody.innerHTML = '';
-      if (!tourResponses.length) {
-        loader.style.display = 'none';
-      }
-
-      if (data.length === 0) {
-        tableContainer.style.display = 'none';
-        emptyState.style.display = 'block';
-      } else {
-        emptyState.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        let index = 1;
-        data.forEach(member => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${index++}</td>
-            <td><strong>${member.name}</strong></td>
-            <td>${member.city || 'N/A'}</td>
-            <td>${member.mobile || 'N/A'}</td>
-            <td>${member.category || 'N/A'}</td>
-            <td>${member.familyCount || '1'}</td>
-            <td>${member.extraBed ? 'Yes' : 'No'}</td>
-          `;
-          tableBody.appendChild(row);
-        });
-      }
-    }
-
-    // Filter list by Search Term and City
-    function filterResponses() {
-      const searchVal = document.getElementById('responseSearchName').value.toLowerCase();
-      const cityVal = document.getElementById('responseSelectCity').value;
-
-      const filtered = tourResponses.filter(m => {
-        const matchesName = m.name.toLowerCase().includes(searchVal);
-        const matchesCity = cityVal === '' || m.city === cityVal;
-        return matchesName && matchesCity;
-      });
-
-      renderTourResponses(filtered);
-    }
-
-    // --- COPY TO CLIPBOARD FUNCTION ---
-    function copyToClipboard(text, buttonElement) {
-      if (!navigator.clipboard) {
-        // Fallback
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand('copy');
-          showCopySuccess(buttonElement);
-        } catch (err) {
-          console.error('Fallback copy failed', err);
-        }
-        document.body.removeChild(textarea);
-        return;
-      }
-
-      navigator.clipboard.writeText(text)
-        .then(() => {
-          showCopySuccess(buttonElement);
-        })
-        .catch(err => {
-          console.error('Async copy failed', err);
-        });
-    }
-
-    function showCopySuccess(btn) {
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<span>✓ Copied</span>';
-      btn.classList.add('copied');
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.classList.remove('copied');
-      }, 2000);
-    }
-
     // Load Data on startup
     window.addEventListener('load', () => {
       loadDirectoryData();
-      loadTourResponses();
     });
   </script>
 </body>
